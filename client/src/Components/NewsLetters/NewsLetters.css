@@ -1,0 +1,77 @@
+.NewsLetters{
+   height: 60vh;
+   background-color:beige;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.newsTitle{
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+.newsDesc{
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.newsContainer{
+   width: 50%;
+   height: 40px;
+   background-color: white;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border: 1px solid lightgray;
+}
+
+.newsInput{
+    border:none;
+    flex:8;
+    padding: 10px;
+}
+
+.newsBtn{
+    flex:1;
+    border: none;
+    background: teal;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

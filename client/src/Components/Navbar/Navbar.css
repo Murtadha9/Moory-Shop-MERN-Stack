@@ -1,0 +1,68 @@
+.ContainerNavbar{
+    height: 60px;
+    
+}
+
+.WrapperNavbar{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LeftNavbar{
+    flex:1;
+    display: flex;
+    align-items: center;
+
+}
+
+.Lang{
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.SearchContainer{
+    border: 0.5px solid lightgray;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    padding: 5px;
+}
+
+.InputNavbar{
+    border: none;
+}
+
+/*############*/
+.CenterNavbar{
+    flex:1;
+    text-align: center;
+}
+.Logo{
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*############*/
+.RightNavbar{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.MenuItem{
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 25px;
+}
+
+
+
+
+
+
+
