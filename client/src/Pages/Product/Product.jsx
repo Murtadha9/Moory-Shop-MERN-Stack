@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Product.css'
 import Navbar from '../../Components/Navbar/Navbar'
 import Announcement from '../../Components/Announcement/Announcement'
@@ -6,8 +6,32 @@ import Footer from '../../Components/Footer/Footer'
 import NewsLetters from '../../Components/NewsLetters/NewsLetters'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { useLocation } from 'react-router-dom'
 
 const Product = () => {
+
+  const location=useLocation();
+  const id=location.pathname.split('/')[2]
+
+  const [product,setProduct]=useState({});
+
+  useEffect(()=>{
+    const getProduct=async()=>{
+      try {
+        const res=await fetch(cate?`/api/product?category=${cate}`: '/api/product');
+        
+        const data=await res.json();
+        setProduct(data);
+      } catch (error) {
+        console.log(error);
+      }
+
+    }
+    getProduct()
+  },[id])
+
+
+
   return (
     <div className='Product-container'>
       <Navbar/>

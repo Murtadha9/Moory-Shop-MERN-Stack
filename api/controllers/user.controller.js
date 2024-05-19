@@ -104,7 +104,7 @@ export const statsUser = async (req, res, next) => {
         // Logging the aggregation result for debugging
         console.log('Aggregation Result:', data);
 
-        res.status(200).json(data);
+        res.status(201).json(data);
     } catch (error) {
         console.error("Error during aggregation:", error); // Log the error for debugging
         next(error);

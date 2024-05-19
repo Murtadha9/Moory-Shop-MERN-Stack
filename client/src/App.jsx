@@ -9,6 +9,10 @@ import Cart from './Pages/Cart/Cart'
 import {BrowserRouter , Route , Routes , redirect} from 'react-router-dom'
 
 const App = () => {
+
+
+
+
   return (
     <BrowserRouter>
     <Routes>

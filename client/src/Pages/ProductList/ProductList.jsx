@@ -15,6 +15,7 @@ const ProductList = () => {
 
   const [filters ,setFilters]=useState({})
   const [sort ,setSort]=useState('newset')
+
   const handelFilters=(e)=>{
     const value=e.target.value;
     setFilters({
@@ -23,25 +24,25 @@ const ProductList = () => {
     })
   }
 
-  
+  console.log(sort)
 
 
   return (
     <div className='ProductList'>
       <Navbar/>
       <Announcement/>
-      <h2>Dressses</h2>
+      <h2>{cate}</h2>
       <div className='FilterContainer'>
         <div className='Filter'>
             <span className='filterText'>Filter Product: </span>
             <select className='select' name="color" id="" onChange={handelFilters} >
                 <option className='option'   >Color</option>
-                <option className='option'  value="Red">Red</option>
-                <option className='option'  value="White">White</option>
-                <option className='option'  value="Black">Black</option>
-                <option className='option'  value="Green">Green</option>
-                <option className='option'  value="Blue">Blue</option>
-                <option className='option'  value="Yellow">Yellow</option>
+                <option className='option'  >red</option>
+                <option className='option'  >white</option>
+                <option className='option'  >black</option>
+                <option className='option'  >green</option>
+                <option className='option'  >blue</option>
+                <option className='option'  >yellow</option>
             </select>
 
             <select className='select' name="size" id="" onChange={handelFilters}>
