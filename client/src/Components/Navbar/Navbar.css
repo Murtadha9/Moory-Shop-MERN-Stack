@@ -60,8 +60,15 @@
     margin-left: 25px;
 }
 
+.LinkNav{
+    text-decoration: none;
+    color: black;
+}
 
-
+.UserRegNav{
+    display: flex;
+    align-items: center;
+}
 
 
 

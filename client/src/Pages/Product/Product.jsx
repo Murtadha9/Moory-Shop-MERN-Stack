@@ -7,6 +7,8 @@ import NewsLetters from '../../Components/NewsLetters/NewsLetters'
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useLocation } from 'react-router-dom'
+import { useDispatch } from "react-redux";
+import {addProduct} from '../../redux/cartRedux'
 
 const Product = () => {
 
@@ -14,11 +16,16 @@ const Product = () => {
   const id=location.pathname.split('/')[2]
 
   const [product,setProduct]=useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
+
+  const dispatch = useDispatch();
 
   useEffect(()=>{
     const getProduct=async()=>{
       try {
-        const res=await fetch(cate?`/api/product?category=${cate}`: '/api/product');
+        const res=await fetch(`/api/product/find/${id}`);
         
         const data=await res.json();
         setProduct(data);
@@ -30,7 +37,21 @@ const Product = () => {
     getProduct()
   },[id])
 
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
 
+  const handleClick = () => {
+    dispatch(
+      addProduct({ ...product, quantity, color, size })
+    );
+  }
+
+  
 
   return (
     <div className='Product-container'>
@@ -39,39 +60,53 @@ const Product = () => {
 
       <div className='wrapper-products'>
         <div className='img-container'>
-            <img className='img-products' src="https://i.ibb.co/S6qMxwr/jean.jpg" alt="" />
+            <img className='img-products' src={product.img} alt="" />
         </div>
         <div className='info-container'>
-            <h2>Denim JumpSuit</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores distinctio suscipit velit enim, deserunt repellendus placeat praesentium aliquid, a natus blanditiis aliquam at officia eaque? Exercitationem perferendis sint asperiores.
-               </p>
-            <span className='span-price'>$90</span>
+            <h2>{product.title}</h2>
+            <p>{product.desc}</p>
+            <span className='span-price'>${product.price}</span>
 
             <div className='filter-container'>
                 
-                <div className='filterF'>
-                    <span className='filter-Title'>Color</span>
-                    <div className='div1'></div>
-                    <div className='div2'></div>
-                    <div className='div3'></div>
-                </div>
+            <div className='filterF'>
+            <span className='filter-Title'>Color</span>
+            {product && product.color ? (
+                product.color.map((c, index) => (
+           <div
+            className='div1'
+            key={index} 
+            style={{ backgroundColor: c }}
+            onClick={() => setColor(c)}
+          ></div>
+           ))
+          ) : (
+           <p>No colors available</p> 
+              )}
+          </div>
+
+
                 <div className='filterF'>
                     <span className='filter-Title'>Size</span>
-                    <select className='FilterSize' name="" id="">
-                        <option className='sizeOption' value="">M</option>
-                        <option className='sizeOption' value="">L</option>
-                        <option className='sizeOption' value="">XL</option>
-                        <option className='sizeOption' value="">XXL</option>
+                    
+                    <select className='FilterSize' name="" id="" onChange={(e) => setSize(e.target.value)}>
+
+                      {product && product.size?(
+                        product.size.map((s,index)=>(
+                          <option className='sizeOption' key={index} value={s} >{s}</option>
+                        ))
+                      ):(<></>)}
+                       
                     </select>
                 </div>
             </div>
             <div className='add-container'>
                 <div className='amount-container'>
-                    <RemoveIcon/>
-                    <span className='amount'>90</span>
-                    <AddIcon/>
+                    <RemoveIcon onClick={() => handleQuantity("dec")}/>
+                    <span className='amount'>{quantity}</span>
+                    <AddIcon onClick={() => handleQuantity("inc")}/>
                 </div>
-                <button className='btn-product'>Add to Cart</button>
+                <button className='btn-product' onClick={handleClick}>Add to Cart</button>
             </div>
         </div>
       </div>

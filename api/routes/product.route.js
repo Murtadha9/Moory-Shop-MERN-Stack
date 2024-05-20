@@ -10,7 +10,7 @@ const router=express.Router();
 router.post('/create' ,verifyToken ,createProduct)
 router.put('/update/:id' ,verifyToken ,updateProduct)
 router.delete('/delete/:id' ,verifyToken ,deleteProduct)
-router.get('/find/:id' ,verifyToken ,getProduct)
+router.get('/find/:id'  ,getProduct)
 router.get('/'  ,getProducts)
 
 

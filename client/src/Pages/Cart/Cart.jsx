@@ -6,8 +6,12 @@ import Announcement from '../../Components/Announcement/Announcement'
 import Footer from '../../Components/Footer/Footer'
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
+    const cart = useSelector((state) => state.cart);
+
+
   return (
     <div className='Cart'>
       <Navbar/>
@@ -29,57 +33,52 @@ const Cart = () => {
 
         <div className='bottomCart'>
             <div className='infoCart'>
-                <div className='product-cart'>
 
-                    <div className='product-detial'>
-                        <img className='imgCart' src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" alt="" />
-                        <div className='detials'>
-                            <span className='product-name'><b>Product : </b> jenus thunder shoes </span>
-                            <span className='product-id'><b>ID : </b>123456</span>
-                            <div className='product-color'></div>
-                            <span className='product-size'><b>Size : </b>45 </span>
-                        </div>
-                    </div>
-                    
+                {cart.products.map((product)=>(
+                    <>
+                    <div className='product-cart' key={product.id}>
 
-                    <div className='product-price'>
-                        <div className='ProductamountContainer'>
-                            <AddIcon/>
-                            <div className='productAmount'>2</div>
-                            <RemoveIcon/>
+                        <div className='product-detial'>
+                            <img className='imgCart' src={product.img} alt="" />
+                            <div className='detials'>
+                                <span className='product-name'><b>Product : </b> {product.title}</span>
+                                <span className='product-id'><b>ID : </b>123456</span>
+                                <div className='product-color' style={{
+                                    backgroundColor:product.color
+                                }}></div>
+                                <span className='product-size'><b>Size : </b>{product.size} </span>
+                            </div>
                         </div>
-                        <div className='productPrice'>$200</div>
-                    </div>
-                </div>
-                <hr />
-                <div className='product-cart'>
 
-                    <div className='product-detial'>
-                        <img className='imgCart' src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" alt="" />
-                        <div className='detials'>
-                            <span className='product-name'><b>Product : </b> jenus thunder shoes </span>
-                            <span className='product-id'><b>ID : </b>123456</span>
-                            <div className='product-color'></div>
-                            <span className='product-size'><b>Size : </b>45 </span>
-                        </div>
-                    </div>
-                    
 
-                    <div className='product-price'>
-                        <div className='ProductamountContainer'>
-                            <AddIcon/>
-                            <div className='productAmount'>2</div>
-                            <RemoveIcon/>
+                        <div className='product-price'>
+                             <div className='ProductamountContainer'>
+                        <AddIcon/>
+                         <div className='productAmount'>{product.quantity}</div>
+                         <RemoveIcon/>
                         </div>
-                        <div className='productPrice'>$200</div>
+                     <div className='productPrice'>${product.price*product.quantity}</div>
                     </div>
-                </div>
+
+
+                    </div>
+                    <hr />
+                    </>
+                ))}
+               
+
+
+
             </div>
+
+
+
+
             <div className='summaryCart'>
                 <h1>Order Summary</h1>
                 <div className='summaryItem'>
                     <span className='summaryItemText'>Subtotal</span>
-                    <span className='summaryItemPrice'>$900</span>
+                    <span className='summaryItemPrice'>${cart.total}</span>
                 </div>
 
                
@@ -95,7 +94,7 @@ const Cart = () => {
 
                 <div className='summaryItem'>
                     <span className='summaryItemText' style={{fontSize:'25px',fontWeight:'bolder'}}>Total</span>
-                    <span className='summaryItemPrice' style={{fontSize:'20px',fontWeight:'bolder'}}>$900</span>
+                    <span className='summaryItemPrice' style={{fontSize:'20px',fontWeight:'bolder'}}>${cart.total}</span>
                 </div>
               
                 <button className='btnChecOut'>CheckOut Now</button>
