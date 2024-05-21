@@ -55,12 +55,12 @@ const Product = () => {
 
   return (
     <div className='Product-container'>
-      <Navbar/>
-      <Announcement/>
+
+   
 
       <div className='wrapper-products'>
         <div className='img-container'>
-            <img className='img-products' src={product.img} alt="" />
+            <img className='img-products' src={product.image} alt="" />
         </div>
         <div className='info-container'>
             <h2>{product.title}</h2>

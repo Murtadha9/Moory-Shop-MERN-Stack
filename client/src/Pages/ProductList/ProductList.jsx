@@ -29,8 +29,7 @@ const ProductList = () => {
 
   return (
     <div className='ProductList'>
-      <Navbar/>
-      <Announcement/>
+      
       <h2>{cate}</h2>
       <div className='FilterContainer'>
         <div className='Filter'>

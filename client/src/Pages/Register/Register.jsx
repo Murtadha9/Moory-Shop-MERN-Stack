@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Register.css'
 import {Link, useNavigate} from 'react-router-dom'
+import OAuth from '../../Components/OAuth/OAuth';
 
 const Register = () => {
 
@@ -36,7 +37,7 @@ const Register = () => {
       }
       setLoading(false)
       setError(null)
-      navigate('/')
+      navigate('/login')
     } catch (error) {
       setLoading(false);
       setError(error.message)
@@ -52,16 +53,20 @@ const Register = () => {
                 
                 <input className='input' type="text" placeholder='Username' id='username' onChange={handleChange} />
                 <input className='input' type="text" placeholder='Email' id='email' onChange={handleChange}/>
-                <input className='input' type="text" placeholder='Password' id='password' onChange={handleChange}/>
+                <input className='input' type="password" placeholder='Password' id='password' onChange={handleChange}/>
                
                
                 <button className='btnRegister'>Register</button>
             </form>
 
             <span className='spanReg'>
-            aleardy have account ?
+            <p>aleardy have account ?</p>
             <Link className='LinkReg' to={'/login'}>Login</Link>
             </span>
+
+            <div className='aouthContainer'>
+            <OAuth/>
+            </div>
             
         </div>
       

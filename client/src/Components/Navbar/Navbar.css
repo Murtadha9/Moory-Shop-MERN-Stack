@@ -1,5 +1,8 @@
 .ContainerNavbar{
     height: 60px;
+    background: linear-gradient(to right, #304352, #d7d2cc);
+    border-radius: 10px;
+
     
 }
 
@@ -20,10 +23,11 @@
 .Lang{
     font-size: 14px;
     cursor: pointer;
+    color: #d7d2cc;
 }
 
 .SearchContainer{
-    border: 0.5px solid lightgray;
+    background-color: #d7d2cc;
     display: flex;
     align-items: center;
     margin-left: 25px;
@@ -32,6 +36,7 @@
 
 .InputNavbar{
     border: none;
+    padding: 5px;
 }
 
 /*############*/
@@ -41,6 +46,7 @@
 }
 .Logo{
     font-weight: bold;
+    color: white;
     padding: 0;
     margin: 0;
 }
@@ -63,6 +69,8 @@
 .LinkNav{
     text-decoration: none;
     color: black;
+    font-weight: bold;
+    font-size: larger;
 }
 
 .UserRegNav{

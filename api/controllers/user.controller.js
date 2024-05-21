@@ -4,8 +4,8 @@ import { errorHandler } from "../utiles/error.js";
 
 //updateUser
 export const updateUser=async(req, res, next) => {
-    if (req.user.id !== req.params.id  )
-        return next(errorHandler(401, 'You can only update your own account!'));
+    if (!req.user.isAdmin  )
+        return next(errorHandler(401, 'You are not allowed to update becusee you are not admin'));
       try {
         if (req.body.password) {
           req.body.password = bcryptjs.hashSync(req.body.password, 10);

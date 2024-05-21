@@ -17,10 +17,12 @@
 .WrapperRegister{
     width: 40%;
     padding: 20px;
-    background-color: white;
+    background-color: #d7d2cc;
+    border-radius: 10px;
 }
 
 .title-reg{
+    text-align: center;
     font-size: 24px;
     font-weight: 300;
 }
@@ -36,6 +38,7 @@
     width: 60%;
     margin: 20px 10px 0px 0px;
     padding: 10px;
+    border-radius: 10px;
 }
 
 
@@ -47,28 +50,32 @@
     width: 40%;
     border: none;
     padding: 15px 20px;
-    background-color: teal;
+    background-color: #304352;
     color: white;
     cursor: pointer;
     margin: 20px 10px 0px 0px;
-    border-radius: 20%;
-}
-
-.LinkReg{
-    width: 40%;
-    text-decoration: none;
-    color: teal;
-    font-weight: bold;
-    align-self:center ;
-
+    border-radius: 10px;
 }
 
 .spanReg{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
+}
+
+.LinkReg{
     
+    text-decoration: none;
+    color: #304352;
+    font-weight: bold;
+    text-align:center ;
 
 }
+
+.aouthContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

@@ -3,6 +3,7 @@ import './Login.css'
 import { Link, useNavigate } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {signInStart,signInSuccess,signInFailure} from '../../redux/userRedux'
+import OAuth from '../../Components/OAuth/OAuth'
 
 const Login = () => {
 
@@ -42,19 +43,24 @@ const Login = () => {
   return (
     <div className='Login'>
         <div className='WrapperRegister'>
-            <h1 className='title-reg'>Create an account</h1>
-            <form className='formLogin' onSubmit={handleSubmit}>
+            <h1 className='title-reg'>Log In</h1>
+            <form className='form' onSubmit={handleSubmit}>
               
                 
                 <input className='input' type="text" placeholder='Email' id='email' onChange={handleChange} />
                 <input className='input' type="password" placeholder='password' id='password' onChange={handleChange}/>
-                <button className='btnLogin'>Create</button>
+                <button className='btnRegister'>Login</button>
                 
             </form>
+
             <span className='spanReg'>
-            Do'nt have account yet ?
+            <p>Don't have account yet ?</p>
             <Link className='LinkReg' to={'/register'}>Register</Link>
             </span>
+
+            <div className='aouthContainer'>
+            <OAuth/>
+            </div>
         </div>
       
     </div>

@@ -10,12 +10,46 @@ import { useSelector } from 'react-redux'
 
 const Cart = () => {
     const cart = useSelector((state) => state.cart);
+    const userId = useSelector((state) => state.user.currentUser._id);
+
+
+    const makeOrder = async () => {
+        const orderData = {
+          userId,
+          products: cart.products.map(product => ({
+            productId: product.id,
+            quantity: product.quantity,
+          })),
+          amount: cart.total,
+          address: {
+            street: '123 Main St', 
+            city: 'Baghdad',
+            zip: '12345',
+            country: 'Iraq',
+          },
+          status: 'pending',
+        };
+    
+        try {
+          const res = await fetch('/api/order/create', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(orderData),
+          });
+          const data = await res.json();
+          console.log('Order created successfully:', data);
+        } catch (err) {
+          console.error('Error creating order:', err);
+        }
+      };
 
 
   return (
     <div className='Cart'>
-      <Navbar/>
-      <Announcement/>
+
+      
 
       <div className='WrapperCart'>
         <h1 className='titleCart'>Your Bag</h1>
@@ -39,7 +73,7 @@ const Cart = () => {
                     <div className='product-cart' key={product.id}>
 
                         <div className='product-detial'>
-                            <img className='imgCart' src={product.img} alt="" />
+                            <img className='imgCart' src={product.image} alt="" />
                             <div className='detials'>
                                 <span className='product-name'><b>Product : </b> {product.title}</span>
                                 <span className='product-id'><b>ID : </b>123456</span>
@@ -101,6 +135,9 @@ const Cart = () => {
             </div>
         </div>
       </div>
+
+
+      <button onClick={makeOrder}>Make a order</button>
       
 
 

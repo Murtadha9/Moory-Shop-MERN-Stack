@@ -1,0 +1,28 @@
+.authO{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: #304352;
+    font-weight: bolder;
+    background: rgb(203,0,0);
+    background: linear-gradient(90deg, rgba(203,0,0,1) 0%, rgba(255,246,43,1) 33%, rgba(66,162,83,1) 70%, rgba(0,39,255,1) 100%);
+}
+
+
+.iconG{
+    color: white;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+

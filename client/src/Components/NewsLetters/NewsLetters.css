@@ -1,6 +1,6 @@
 .NewsLetters{
    height: 60vh;
-   background-color:beige;
+   background-color:#d7d2cc;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -37,7 +37,7 @@
 .newsBtn{
     flex:1;
     border: none;
-    background: teal;
+    background: #304352;
     color: white;
     padding: 5px 10px;
     cursor: pointer;
