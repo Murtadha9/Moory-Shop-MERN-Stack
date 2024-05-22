@@ -53,8 +53,6 @@ const Cart = () => {
 
   return (
     <div className='Cart'>
-      <Navbar />
-      <Announcement />
       <div className='WrapperCart'>
         <h1 className='titleCart'>Your Bag</h1>
         <div className='topCart'>
