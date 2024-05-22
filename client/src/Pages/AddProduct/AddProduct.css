@@ -23,6 +23,7 @@
   .AddProduct form {
     display: flex;
     flex-direction: column;
+    
   }
   
   .AddProduct input[type="text"],
@@ -59,6 +60,7 @@
   
   .AddProduct input[type="checkbox"] {
     margin-right: 5px;
+    
   }
   
   .AddProduct input[type="file"] {
@@ -69,7 +71,7 @@
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #304352;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -82,7 +84,7 @@
   }
   
   .AddProduct button:hover:not(:disabled) {
-    background-color: #0056b3;
+    background-color: #304352;
   }
   
   .AddProduct img {

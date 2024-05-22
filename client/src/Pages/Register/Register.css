@@ -1,5 +1,4 @@
-
-.Register{
+.Register {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(
@@ -8,74 +7,99 @@
       ),
       url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
         center;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-}
-
-.WrapperRegister{
-    width: 40%;
-    padding: 20px;
-    background-color: #d7d2cc;
-    border-radius: 10px;
-}
-
-.title-reg{
-    text-align: center;
-    font-size: 24px;
-    font-weight: 300;
-}
-.form{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-
-.input{
-    flex: 1;
-    width: 60%;
-    margin: 20px 10px 0px 0px;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-
-
-
-
-.btnRegister{
-    align-self:center ;
-    width: 40%;
-    border: none;
-    padding: 15px 20px;
-    background-color: #304352;
-    color: white;
-    cursor: pointer;
-    margin: 20px 10px 0px 0px;
-    border-radius: 10px;
-}
-
-.spanReg{
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.LinkReg{
-    
+  }
+  
+  .WrapperRegister {
+    width: 40%;
+    padding: 40px;
+    background-color: #d7d2cc;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title-reg {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input {
+    width: 80%;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+  }
+  
+  .input:focus {
+    border-color: #304352;
+    outline: none;
+    background-color: #fff;
+  }
+  
+  .btnRegister {
+    width: 50%;
+    padding: 15px;
+    background-color: #304352;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .btnRegister:hover {
+    background-color: #3b5360;
+  }
+  
+  .spanReg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .LinkReg {
     text-decoration: none;
     color: #304352;
     font-weight: bold;
-    text-align:center ;
-
-}
-
-.aouthContainer{
+    margin-left: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .LinkReg:hover {
+    color: #3b5360;
+  }
+  
+  .aouthContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+ 
+  .errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  

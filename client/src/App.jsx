@@ -17,6 +17,7 @@ import ShowProducts from './Pages/ShowProducts/ShowProducts'
 import EditProduct from './Pages/EditProduct/EditProduct'
 import EditUser from './Pages/EditUser/EditUser'
 import Categories from './Components/Categories/Categories'
+import DoneShopping from './Pages/DoneShopping/DoneShopping'
 
 const App = () => {
 
@@ -42,6 +43,7 @@ const App = () => {
       <Route path='/showproducts' element={<ShowProducts/>}/>
       <Route path='/editproduct/:productId' element={<EditProduct/>}/>
       <Route path='/edituser/:userId' element={<EditUser/>}/>
+      <Route path='/done' element={<DoneShopping/>}/>
 
     </Routes>
     

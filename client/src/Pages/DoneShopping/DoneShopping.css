@@ -1,0 +1,42 @@
+.done-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    color: #304352,; 
+    font-family: 'Arial', sans-serif; 
+    text-align: center;
+    padding: 20px; 
+    box-sizing: border-box; 
+  }
+  
+  .done-message {
+    background-color: #d7d2cc; 
+    padding: 40px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .done-message h1 {
+    font-size: 2rem;
+    margin-bottom: 20px; 
+  }
+  
+  .done-message p {
+    font-size: 1.2rem; 
+    margin-bottom: 10px; 
+  }
+  
+  .done-message a {
+    color: #304352,; 
+    text-decoration: none; 
+    font-weight: bold; 
+    margin-top: 20px; 
+    display: inline-block; 
+  }
+  
+  .done-message a:hover {
+    text-decoration: underline; 
+  }
+  
