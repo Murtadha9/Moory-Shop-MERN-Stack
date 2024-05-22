@@ -1,5 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
+
+  
 body{
-    background: linear-gradient(to right, #ffffff, #ffdde1);
+  background-image: linear-gradient(to right, #cc95c0, #dbd4b4, #7aa1d2);
 
 }

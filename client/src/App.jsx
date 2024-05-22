@@ -16,6 +16,7 @@ import Orders from './Pages/Orders/Orders'
 import ShowProducts from './Pages/ShowProducts/ShowProducts'
 import EditProduct from './Pages/EditProduct/EditProduct'
 import EditUser from './Pages/EditUser/EditUser'
+import Categories from './Components/Categories/Categories'
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
     <Announcement/>
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/category' element={<Categories/>}/>
       <Route path='/products/:category' element={<ProductList/>}/>
       <Route path='/product/:id' element={<Product/>}/>
       <Route path='/cart' element={<Cart/>}/>

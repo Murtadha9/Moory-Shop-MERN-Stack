@@ -1,9 +1,121 @@
 
-.formProducts{
+
+
+  
+  /* Styling for the AddProduct component */
+  .AddProduct {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: linear-gradient(to right,  #ffdde1 ,#ffffff);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .AddProduct h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .AddProduct form {
     display: flex;
     flex-direction: column;
-}
+  }
+  
+  .AddProduct input[type="text"],
+  .AddProduct input[type="number"],
+  .AddProduct textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .AddProduct textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .AddProduct div {
+    margin-bottom: 15px;
+  }
+  
+  .AddProduct span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .AddProduct label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  .AddProduct input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .AddProduct input[type="file"] {
+    margin-bottom: 10px;
+  }
+  
+  .AddProduct button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .AddProduct button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .AddProduct button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  .AddProduct img {
+    max-width: 100px;
+    margin-top: 10px;
+  }
+  
+  .AddProduct .error {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
 
+  .imgDIV {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .imgProduct {
+    max-width: 100%; /* Adjusted for larger width */
+    max-height: 100%; /* Added max-height for control */
+    height: auto;
+    border: 2px solid #ddd; /* Increased border thickness */
+    border-radius: 8px; /* Increased border radius */
+    padding: 10px; /* Increased padding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Increased shadow effect */
+    object-fit: cover;
+  }
+  
+  
 
 
 

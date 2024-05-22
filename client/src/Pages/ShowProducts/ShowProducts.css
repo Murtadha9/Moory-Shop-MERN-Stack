@@ -1,0 +1,81 @@
+.products-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+  .products-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .products-table thead tr {
+    background-color: #f4f4f4;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .products-table th, .products-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .products-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .products-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .products-table img {
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .products-table img:hover {
+    transform: scale(1.1);
+  }
+  
+  .products-table a, .products-table button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+  }
+  
+  .products-table a:hover, .products-table button:hover {
+    color: #304352;
+  }
+  
+  .products-table .edit-icon, .products-table .delete-icon {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+  
+  .products-table .delete-icon{
+    color: #dc3545;
+  }
+  
+  /* Additional styling for the table headers and cells */
+  .products-table th {
+    background-color: #304352;
+    color: white;
+  }
+  
+  .products-table th:first-child, .products-table td:first-child {
+    border-left: none;
+  }
+  
+  .products-table th:last-child, .products-table td:last-child {
+    border-right: none;
+  }
+  

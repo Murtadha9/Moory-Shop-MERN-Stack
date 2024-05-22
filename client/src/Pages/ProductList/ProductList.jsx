@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './ProductList.css'
 import Navbar from '../../Components/Navbar/Navbar'
 import Announcement from '../../Components/Announcement/Announcement'
@@ -13,8 +13,20 @@ const ProductList = () => {
   const location=useLocation();
   const cate=location.pathname.split('/')[2]
 
+
+  const [products, setProducts] = useState([])
+
   const [filters ,setFilters]=useState({})
   const [sort ,setSort]=useState('newset')
+
+  useEffect(()=>{
+    const getProducts=async()=>{
+      const res=await fetch('/api/products')
+      const data=await res.json()
+      setProducts(data)
+    }
+    getProducts()
+  },[])
 
   const handelFilters=(e)=>{
     const value=e.target.value;
@@ -24,18 +36,18 @@ const ProductList = () => {
     })
   }
 
-  console.log(sort)
+  
 
 
   return (
     <div className='ProductList'>
       
-      <h2>{cate}</h2>
+      <h1>{cate}</h1>
       <div className='FilterContainer'>
         <div className='Filter'>
             <span className='filterText'>Filter Product: </span>
             <select className='select' name="color" id="" onChange={handelFilters} >
-                <option className='option'   >Color</option>
+                <option className='option'  >Color</option>
                 <option className='option'  >red</option>
                 <option className='option'  >white</option>
                 <option className='option'  >black</option>

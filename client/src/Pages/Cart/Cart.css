@@ -128,7 +128,7 @@
 .btnChecOut{
     width: 100%;
     padding: 10px;
-    background-color: teal;
+    background-color: #304352;
     color: white;
     font-weight: 600;
     border: none;
@@ -136,4 +136,15 @@
     cursor: pointer;
 }
 
-
+.makeOrder{
+    width: 10%;
+    padding: 10px;
+    background-color: #304352;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 20px;
+}

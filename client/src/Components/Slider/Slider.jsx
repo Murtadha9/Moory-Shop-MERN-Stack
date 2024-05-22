@@ -3,6 +3,7 @@ import ArrowLeftOutlinedIcon from '@mui/icons-material/ArrowLeftOutlined';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import './Slider.css'
 import {sliderItems} from '../../data'
+import {Link} from 'react-router-dom'
 
 const Slider = () => {
 
@@ -34,7 +35,7 @@ const Slider = () => {
              <div className='InfoContainer'>
                  <h1 className='TitleSlide'>{item.title}</h1>
                  <p className='DescSlide'>{item.desc} </p>
-                 <button className='btnSlide'>SHOP NOW</button>
+                 <Link to={'/category'} className='btnSlide'>More</Link>
              </div>
            </div>
         ))}

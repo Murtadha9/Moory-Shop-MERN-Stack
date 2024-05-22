@@ -1,0 +1,55 @@
+.edit-user-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right,  #ffdde1 ,#ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .edit-user-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .edit-user-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .edit-user-form input[type="text"],
+  .edit-user-form input[type="email"],
+  .edit-user-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .edit-user-form input[type="text"]:focus,
+  .edit-user-form input[type="email"]:focus,
+  .edit-user-form input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .edit-user-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-user-form button:hover {
+    background-color: #0056b3;
+  }
+  

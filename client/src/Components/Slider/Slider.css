@@ -1,94 +1,79 @@
 
-
-.ContainerSlider{
-   width: 100%;
-   height: 100vh;
-   position: relative;
-   overflow: hidden;
-}
-
-.arrow{
-    height:70px;
-    height: 50px;
-    background-color: rgb(230, 222, 222);
-    border-radius: 10px;
+.ContainerSlider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: 15px;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    cursor: pointer;
-    margin: auto;
-    z-index: 2;
-
-}
-
-.WrapperSlider{
-    height: 100%;
+    z-index: 1;
+  }
+  
+  .arrow:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .WrapperSlider {
     display: flex;
-    transition: all 1.5s ease;
-   
-}
-
-.Slide{
-    width: 150vw;
-    height: 100vh;
+    transition: all 1s ease;
+  }
+  
+  .Slide {
+    min-width: 100vw;
+    height: 100%;
     display: flex;
     align-items: center;
-}
-
-.ImgContainer{
-    height: 100%;
-    flex:1;
-}
-
-.imgSlide{
-    height: 80%;
-}
-
-.InfoContainer{
-    flex:1;
-    padding: 50px;
-}
-
-.TitleSlide{
-   font-size: 70px;
-}
-
-.DescSlide{
-    margin: 50px 0;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 3px;
-
-}
-
-.btnSlide{
-    padding: 10px;
-    font-size: 20px;
-    background-color: transparent;
+  }
+  
+  .ImgContainer {
+    flex: 1;
+  }
+  
+  .imgSlide {
+    width: 100%;
+    height: auto;
+  }
+  
+  .InfoContainer {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .TitleSlide {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .DescSlide {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .btnSlide {
+    text-decoration: none;
+    background-color: #304352;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btnSlide:hover {
+    background-color: teal;
+  }
+  

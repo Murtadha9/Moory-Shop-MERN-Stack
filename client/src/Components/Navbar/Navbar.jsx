@@ -58,8 +58,8 @@ const Navbar = () => {
 
                {currentUser?(
                <div className='UserRegNav'>
-                <div className='MenuItem'>Hello {currentUser.username}</div>
-                <button onClick={handleSignout}>SignOut</button>
+                <div className='MenuItemName'><p>Hello</p>  {currentUser.username}</div>
+                <button className='signout' onClick={handleSignout}>SignOut</button>
                 <Link className='LinkNav' to={'/cart'}>
                     <div className='MenuItem'>
                     <Badge color="secondary" badgeContent={quantity}>

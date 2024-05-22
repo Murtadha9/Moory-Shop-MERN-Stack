@@ -1,15 +1,12 @@
-
 import React, { useState } from 'react';
 import './AddProduct.css';
 import {
-    getDownloadURL,
-    getStorage,
-    ref,
-    uploadBytesResumable,
-  } from 'firebase/storage';
-  import { app } from '../../firebase';
-
-
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from 'firebase/storage';
+import { app } from '../../firebase';
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
@@ -26,10 +23,10 @@ const AddProduct = () => {
   const [loading, setLoading] = useState(false);
 
   const [file, setFile] = useState(null);
+  const [imageFileURL, setImageFileURL] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [publishError, setPublishError] = useState(null);
-
 
   const handleUpdloadImage = async () => {
     try {
@@ -58,6 +55,7 @@ const AddProduct = () => {
             setImageUploadProgress(null);
             setImageUploadError(null);
             setFormData({ ...formData, image: downloadURL });
+            setImageFileURL(downloadURL); // Set the image URL here
           });
         }
       );
@@ -67,7 +65,6 @@ const AddProduct = () => {
       console.log(error);
     }
   };
-
 
   const handleChange = (e) => {
     const { id, value, checked } = e.target;
@@ -88,9 +85,7 @@ const AddProduct = () => {
     }
   };
 
-
-  console.log(formData)
-
+  console.log(formData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -123,6 +118,7 @@ const AddProduct = () => {
         price: '',
         inStock: true,
       });
+      setImageFileURL(null); // Reset the image URL
       alert('Product added successfully');
     } catch (error) {
       setLoading(false);
@@ -130,19 +126,16 @@ const AddProduct = () => {
     }
   };
 
-
-
-
-
   return (
     <div className="AddProduct">
       <h1>Add New Product</h1>
       <form onSubmit={handleSubmit}>
-
-
         <div>
-        <input type="file" accept='image/*' onChange={(e) => setFile(e.target.files[0])} />
-        <button onClick={handleUpdloadImage}>Upload Image</button>
+          <input type="file" accept="image/*" onChange={(e) => setFile(e.target.files[0])} />
+          <button type="button" onClick={handleUpdloadImage}>Upload Image</button>
+        </div>
+        <div className='imgDIV'>
+        {imageFileURL && <img src={imageFileURL} alt="Product" className='imgProduct'/>}
         </div>
 
         <input
@@ -162,10 +155,9 @@ const AddProduct = () => {
           required
         />
         
-        
         <div>
           <span>Categories:</span>
-          {['Men', 'Women', 'Kids' ,'Shoes'].map((category) => (
+          {['Men', 'Women', 'Kids', 'Shoes'].map((category) => (
             <label key={category}>
               <input
                 type="checkbox"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from 'react-router-dom';
-
+import './ShowProducts.css';
 
 const ShowProducts = () => {
   const [products, setProducts] = useState([]);
@@ -87,8 +87,8 @@ const ShowProducts = () => {
               <td>${product.price}</td>
               <td>{product.inStock ? 'Yes' : 'No'}</td>
               <td>
-                <Link to={`/editproduct/${product._id}`}><EditIcon/></Link>
-                <button onClick={() => handleDelete(product._id)}><DeleteIcon/></button>
+                <Link to={`/editproduct/${product._id}`}><EditIcon className='edit-icon'/></Link>
+                <button onClick={() => handleDelete(product._id)}><DeleteIcon className='delete-icon'/></button>
               </td>
             </tr>
           ))}

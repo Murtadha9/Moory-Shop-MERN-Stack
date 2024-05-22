@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 
 const UserTable = ({ users, onDelete,  }) => {
   return (
-    <div className="UserTable">
-      <table>
+    <div className="products-container">
+      <h1>All Users</h1>
+      <table className='products-table'>
         <thead>
           <tr>
             <th>Username</th>
@@ -17,14 +18,14 @@ const UserTable = ({ users, onDelete,  }) => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {Array.isArray(users) && users.map((user) => (
             <tr key={user._id}>
               <td>{user.username}</td>
               <td>{user.email}</td>
               <td>{new Date(user.createdAt).toLocaleDateString()}</td>
               <td>
-                <Link to={`/edituser/${user._id}`}><EditIcon/></Link>
-                <button onClick={() => onDelete(user._id)}><DeleteIcon/></button>
+                <Link to={`/edituser/${user._id}`}><EditIcon className='edit-icon'/></Link>
+                <button onClick={() => onDelete(user._id)}><DeleteIcon className='delete-icon'/></button>
               </td>
             </tr>
           ))}

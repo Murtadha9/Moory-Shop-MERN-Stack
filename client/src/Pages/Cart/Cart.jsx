@@ -137,7 +137,7 @@ const Cart = () => {
       </div>
 
 
-      <button onClick={makeOrder}>Make a order</button>
+      <button className='makeOrder' onClick={makeOrder}>Make a order</button>
       
 
 

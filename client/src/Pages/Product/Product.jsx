@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './Product.css'
-import Navbar from '../../Components/Navbar/Navbar'
-import Announcement from '../../Components/Announcement/Announcement'
 import Footer from '../../Components/Footer/Footer'
 import NewsLetters from '../../Components/NewsLetters/NewsLetters'
 import AddIcon from '@mui/icons-material/Add';

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import {
   getDownloadURL,
@@ -25,6 +24,7 @@ const EditProduct = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [file, setFile] = useState(null);
+  const [imageFileURL, setImageFileURL] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [dataFetched, setDataFetched] = useState(false);
@@ -44,6 +44,7 @@ const EditProduct = () => {
           price: data.price,
           inStock: data.inStock,
         });
+        setImageFileURL(data.image); // Set the initial image URL
         setDataFetched(true);
       } catch (err) {
         setError(err.message);
@@ -79,6 +80,7 @@ const EditProduct = () => {
             setImageUploadProgress(null);
             setImageUploadError(null);
             setFormData((prevData) => ({ ...prevData, image: downloadURL }));
+            setImageFileURL(downloadURL);
           });
         }
       );
@@ -140,7 +142,7 @@ const EditProduct = () => {
   }
 
   return (
-    <div className="EditProduct">
+    <div className="AddProduct">
       <h1>Edit Product</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -152,6 +154,9 @@ const EditProduct = () => {
           <button type="button" onClick={handleUploadImage}>
             Upload Image
           </button>
+        </div>
+        <div className='imgDIV'>
+        {imageFileURL && <img src={imageFileURL} alt="Product" className='imgProduct'/>}
         </div>
         <input
           type="text"

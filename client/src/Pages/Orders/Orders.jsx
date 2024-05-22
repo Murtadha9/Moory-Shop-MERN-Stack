@@ -14,16 +14,44 @@ const Orders = () => {
       try {
         const res = await fetch('/api/order');
         const data = await res.json();
-        setOrders(data);
-        setLoading(false);
+  
+        // Check if data is an array before updating state
+        if (Array.isArray(data)) {
+          setOrders(data);
+          setLoading(false);
+        } else {
+          setError("Invalid data received from the server.");
+          setLoading(false);
+        }
       } catch (err) {
         setError(err.message);
         setLoading(false);
       }
     };
-
+  
     fetchOrders();
   }, []);
+
+
+  const handleDelete = async (ordertId) => {
+    try {
+      const res = await fetch(`/api/order/delete/${ordertId}`, {
+        method: 'DELETE',
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        return setError(data.message);
+      }
+      if (res.ok) {
+        setOrders((prev) => {
+          return prev.filter((o) => o._id !== ordertId);
+        });
+      }
+    } catch (error) {
+      console.log(error.message);
+      setError(error.message);
+    }
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -34,9 +62,9 @@ const Orders = () => {
   }
 
   return (
-    <div className="orders-container">
+    <div className="products-container">
       <h1>All Orders</h1>
-      <table className="orders-table">
+      <table className="products-table">
         <thead>
           <tr>
             <th>User ID</th>
@@ -64,7 +92,7 @@ const Orders = () => {
               <td>{order.status}</td>
               <td>{new Date(order.createdAt).toLocaleString()}</td>
               <td>
-                <button><DeleteIcon/></button>
+                <button onClick={()=>handleDelete(order._id)}><DeleteIcon className='delete-icon'/></button>
               </td>
             </tr>
           ))}
